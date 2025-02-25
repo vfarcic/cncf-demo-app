@@ -25,3 +25,6 @@ spec:
     ci:
       enabled: true
       tool: none
+    scaling:
+      enabled: true
+      min: 2
