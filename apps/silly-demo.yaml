@@ -1,0 +1,27 @@
+apiVersion: devopstoolkit.live/v1alpha1
+kind: AppClaim
+metadata:
+  name: silly-demo
+  labels:
+    app-owner: vfarcic
+spec:
+  id: silly-demo
+  compositionSelector:
+    matchLabels:
+      type: backend
+      location: local
+  parameters:
+    namespace: production
+    image: ghcr.io/vfarcic/cncf-demo-app
+    tag: FIXME
+    port: 8080
+    host: silly-demo.54.83.234.25.nip.io
+    ingressClassName: contour
+    db:
+      secret: silly-demo-db
+    repository:
+      enabled: true
+      name: cncf-demo-app
+    ci:
+      enabled: true
+      tool: none
